@@ -1,0 +1,298 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap');
+
+:root {
+  color-scheme: dark;
+  --bg: #0c1020;
+  --panel: #161d35;
+  --text: #f6f7ff;
+  --muted: #a8b2cc;
+  --purple: #b5a0ff;
+  --cyan: #70e7d9;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  background:
+    radial-gradient(ellipse at 15% 0%, #5944a52c, transparent 38%),
+    radial-gradient(ellipse at 90% 50%, #00d6c51c, transparent 35%),
+    var(--bg);
+  font-family: "Hind Siliguri", sans-serif;
+}
+
+.header {
+  max-width: 1000px;
+  margin: auto;
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid #ffffff12;
+}
+
+.brand {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.brand:first-letter { color: var(--cyan); }
+
+.brand span { margin-left: 8px; }
+
+.tag, .eyebrow, small {
+  font-size: 11px;
+  letter-spacing: 1.3px;
+  color: var(--cyan);
+}
+
+.tag {
+  border: 1px solid #70e7d933;
+  border-radius: 30px;
+  padding: 8px 12px;
+}
+
+.container {
+  width: min(850px, calc(100% - 30px));
+  margin: auto;
+}
+
+.hero {
+  text-align: center;
+  padding: 60px 10px 35px;
+}
+
+h1 {
+  font-size: clamp(35px, 7vw, 58px);
+  line-height: 1.25;
+  margin: 14px 0;
+}
+
+h1 span {
+  background: linear-gradient(90deg, var(--purple), var(--cyan));
+  color: transparent;
+  background-clip: text;
+}
+
+.hero > p:last-child, #start > p, #description {
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(18px, 5vw, 32px);
+  border: 1px solid #ffffff18;
+  border-radius: 22px;
+  background: linear-gradient(145deg, #1a213d, #11172a);
+  box-shadow: 0 25px 70px #0004;
+}
+
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.card-head h2 { margin: 7px 0; font-size: 22px; }
+
+#counter {
+  color: var(--purple);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.track {
+  height: 6px;
+  background: #ffffff12;
+  border-radius: 9px;
+  overflow: hidden;
+  margin: 20px 0 25px;
+}
+
+#progress, #scoreBar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--purple), var(--cyan));
+  transition: width .3s ease;
+}
+
+#start, #result { text-align: center; padding: 8px 0 15px; }
+
+.emoji { font-size: 65px; margin: 16px; }
+
+#start h3 { font-size: 24px; margin-bottom: 5px; }
+
+label {
+  display: block;
+  text-align: left;
+  width: min(360px, 100%);
+  margin: 20px auto 7px;
+  font-size: 13px;
+}
+
+input {
+  display: block;
+  width: min(360px, 100%);
+  margin: auto;
+  padding: 13px;
+  color: white;
+  background: #0c1225;
+  border: 1px solid #ffffff20;
+  border-radius: 10px;
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  font: 600 14px "Hind Siliguri", sans-serif;
+  transition: transform .15s, opacity .15s;
+}
+
+button:hover { transform: translateY(-2px); }
+button:disabled { opacity: .4; cursor: not-allowed; transform: none; }
+
+.primary, .secondary {
+  padding: 12px 18px;
+  border-radius: 11px;
+}
+
+.primary {
+  color: #10152a;
+  background: linear-gradient(100deg, var(--purple), var(--cyan));
+  border: 0;
+}
+
+#startBtn { width: min(360px, 100%); margin-top: 14px; }
+
+.secondary {
+  color: var(--text);
+  border: 1px solid #ffffff25;
+  background: #ffffff08;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 11px;
+  gap: 12px;
+}
+
+#topic { color: var(--cyan); letter-spacing: 1px; }
+
+#question {
+  font-size: 23px;
+  line-height: 1.6;
+  margin: 18px 0;
+}
+
+.answers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.answer {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  min-height: 60px;
+  padding: 12px;
+  border-radius: 11px;
+  border: 1px solid #ffffff20;
+  background: #ffffff06;
+  color: var(--text);
+}
+
+.answer.selected {
+  border-color: var(--purple);
+  background: #b5a0ff20;
+}
+
+#nextBtn { display: block; margin: 22px 0 0 auto; }
+
+.score {
+  margin: 10px 0;
+  font-size: 76px;
+  font-weight: 700;
+  color: var(--cyan);
+}
+
+.score small { color: var(--muted); }
+
+#title { font-size: 29px; }
+
+#scoreBar { width: 0; }
+
+.actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 22px 0;
+}
+
+.note { color: var(--muted); font-size: 12px; }
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 25px 0 55px;
+}
+
+.steps article {
+  padding: 20px;
+  border: 1px solid #ffffff13;
+  border-radius: 14px;
+  background: #ffffff04;
+}
+
+.steps article > span { color: var(--cyan); font-size: 12px; }
+.steps h3 { margin: 8px 0; }
+.steps p { color: var(--muted); font-size: 13px; line-height: 1.8; }
+
+footer {
+  text-align: center;
+  padding: 25px;
+  border-top: 1px solid #ffffff12;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+#toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 18px;
+  border-radius: 10px;
+  background: #e3fff6;
+  color: #12252a;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+}
+
+#toast.show { opacity: 1; }
+
+[hidden] { display: none !important; }
+
+@media (max-width: 600px) {
+  .header { padding: 16px; }
+  .brand span { font-size: 12px; }
+  .tag { font-size: 8px; }
+  .hero { padding-top: 40px; }
+  .answers, .steps { grid-template-columns: 1fr; }
+  #question { font-size: 20px; }
+  .actions { flex-direction: column; }
+  .actions button { width: 100%; }
+}

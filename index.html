@@ -1,0 +1,83 @@
+
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10152a">
+  <meta name="description" content="বাংলায় মজার Tech-Smart কুইজ খেলো, স্কোর কার্ড তৈরি করো এবং বন্ধুদের চ্যালেঞ্জ করো।">
+  <title>Bangla Challenge Lab</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="header">
+    <a class="brand" href="#">BC <span>Bangla Challenge Lab</span></a>
+    <span class="tag">PLAY · LEARN · SHARE</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">YOUR DAILY CHALLENGE</p>
+      <h1>তুমি কতটা <span>Tech-Smart?</span></h1>
+      <p>৭টি প্রশ্নের উত্তর দাও, নিজের স্কোর দেখো এবং বন্ধুদের চ্যালেঞ্জ করো!</p>
+    </section>
+
+    <section class="card">
+      <div class="card-head">
+        <div>
+          <small>THE QUICK QUIZ</small>
+          <h2 id="heading">চ্যালেঞ্জ নিতে প্রস্তুত?</h2>
+        </div>
+        <span id="counter">৭টি প্রশ্ন</span>
+      </div>
+
+      <div class="track"><div id="progress"></div></div>
+
+      <div id="start">
+        <div class="emoji">🧠</div>
+        <h3>তোমার স্কোর কত হবে?</h3>
+        <p>কোনো অ্যাকাউন্ট বা লগইন লাগবে না।</p>
+        <label for="player">তোমার নাম (ঐচ্ছিক)</label>
+        <input id="player" maxlength="24" placeholder="তোমার নাম লিখো">
+        <button id="startBtn" class="primary">কুইজ শুরু করো →</button>
+      </div>
+
+      <div id="game" hidden>
+        <div class="meta">
+          <span id="topic"></span>
+          <span id="number"></span>
+        </div>
+        <h3 id="question"></h3>
+        <div id="answers" class="answers"></div>
+        <button id="nextBtn" class="primary" disabled>পরের প্রশ্ন →</button>
+      </div>
+
+      <div id="result" hidden>
+        <p class="eyebrow">YOUR RESULT</p>
+        <div class="score"><span id="score">0</span><small> / 7</small></div>
+        <h2 id="title"></h2>
+        <p id="description"></p>
+        <div class="track"><div id="scoreBar"></div></div>
+        <p id="playerResult"></p>
+        <div class="actions">
+          <button id="downloadBtn" class="primary">রেজাল্ট কার্ড ডাউনলোড</button>
+          <button id="shareBtn" class="secondary">Facebook-এ শেয়ার ↗</button>
+          <button id="retryBtn" class="secondary">আবার খেলো ↻</button>
+        </div>
+        <p class="note">বন্ধুকে চ্যালেঞ্জ দাও—সে কি তোমার স্কোর ছাড়াতে পারবে?</p>
+      </div>
+    </section>
+
+    <section class="steps">
+      <article><span>01</span><h3>খেলো</h3><p>সাতটি ছোট প্রশ্নের উত্তর দাও।</p></article>
+      <article><span>02</span><h3>স্কোর দেখো</h3><p>নিজের ফলাফল কার্ড তৈরি করো।</p></article>
+      <article><span>03</span><h3>শেয়ার করো</h3><p>বন্ধুদের খেলতে আমন্ত্রণ জানাও।</p></article>
+    </section>
+    <footer>Bangla Challenge Lab · Made for fun and learning</footer>
+  </main>
+
+  <canvas id="canvas" width="1200" height="630" hidden></canvas>
+  <div id="toast" role="status"></div>
+</body>
+</html>
