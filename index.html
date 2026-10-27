@@ -3,230 +3,311 @@
 <html lang="bn">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Bangla Challenge Lab â€” à¦¤à§à¦®à¦¿ à¦•à¦¤à¦Ÿà¦¾ Tech-Smart?</title>
-    <meta name="description" content="à§­à¦Ÿà¦¿ à¦®à¦œà¦¾à¦° à¦ªà§à¦°à¦¶à§à¦¨à§‡ à¦¯à¦¾à¦šà¦¾à¦‡ à¦•à¦°à§‹ à¦¤à§‹à¦®à¦¾à¦° Tech-Smart à¦¸à§à¦•à§‹à¦°à¥¤ à¦¶à§‡à¦–à§‹, à¦–à§‡à¦²à§‹ à¦à¦¬à¦‚ à¦¬à¦¨à§à¦§à§à¦¦à§‡à¦° à¦¸à¦™à§à¦—à§‡ à¦«à¦²à¦¾à¦«à¦² à¦¶à§‡à§Ÿà¦¾à¦° à¦•à¦°à§‹à¥¤">
-    <meta name="theme-color" content="#090d1b">
+    <title>Bangla Challenge Lab | বাংলা কুইজ</title>
 
+    <meta
+        name="description"
+        content="প্রযুক্তি, ইন্টারনেট ও ডিজিটাল নিরাপত্তা বিষয়ে ৭টি প্রশ্নের উত্তর দিয়ে নিজের Tech-Smart স্কোর যাচাই করো।"
+    >
+
+    <meta name="theme-color" content="#080d1b">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph: Facebook, Messenger and LinkedIn -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="à¦¤à§à¦®à¦¿ à¦•à¦¤à¦Ÿà¦¾ Tech-Smart?">
-    <meta property="og:description" content="à§­à¦Ÿà¦¿ à¦ªà§à¦°à¦¶à§à¦¨à§‡ à¦¯à¦¾à¦šà¦¾à¦‡ à¦•à¦°à§‹ à¦¤à§‹à¦®à¦¾à¦° à¦¡à¦¿à¦œà¦¿à¦Ÿà¦¾à¦² à¦¸à§à¦®à¦¾à¦°à§à¦Ÿà¦¨à§‡à¦¸à¥¤ à¦à¦¬à¦¾à¦° à¦¤à§‹à¦®à¦¾à¦° à¦¸à§à¦•à§‹à¦° à¦•à¦¤?">
-    <meta property="og:url" content="https://imranbrand.github.io/bangla-challenge-lab/">
-    <meta property="og:image" content="https://imranbrand.github.io/bangla-challenge-lab/assets/og-card.png">
+    <meta property="og:locale" content="bn_BD">
+    <meta property="og:site_name" content="Bangla Challenge Lab">
+    <meta property="og:title" content="তুমি কতটা Tech-Smart?">
+    <meta
+        property="og:description"
+        content="৭টি মজার প্রশ্নের উত্তর দিয়ে নিজের ডিজিটাল জ্ঞান যাচাই করো। স্কোর দেখো, রেজাল্ট কার্ড তৈরি করো এবং বন্ধুদের চ্যালেঞ্জ করো!"
+    >
+    <meta
+        property="og:url"
+        content="https://imranbrand.github.io/bangla-challenge-lab/"
+    >
+    <meta
+        property="og:image"
+        content="https://imranbrand.github.io/bangla-challenge-lab/assets/og-card.png"
+    >
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Bangla Challenge Lab — তুমি কতটা Tech-Smart?">
+
+    <!-- Twitter / X preview -->
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="তুমি কতটা Tech-Smart?">
+    <meta
+        name="twitter:description"
+        content="৭টি প্রশ্নে যাচাই করো তোমার ডিজিটাল জ্ঞান!"
+    >
+    <meta
+        name="twitter:image"
+        content="https://imranbrand.github.io/bangla-challenge-lab/assets/og-card.png"
+    >
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Website stylesheet -->
+    <link rel="stylesheet" href="./styles.css">
 
-    <link rel="stylesheet" href="styles.css">
-    <script src="app.js" defer></script>
+    <!-- Website icon (optional) -->
+    <link rel="icon" href="./assets/og-card.png" type="image/png">
+
+    <!-- JavaScript -->
+    <script src="./app.js" defer></script>
 </head>
 
 <body>
-    <div class="ambient ambient-one"></div>
-    <div class="ambient ambient-two"></div>
+    <div class="app-shell">
 
-    <header class="site-header">
-        <a class="brand" href="./" aria-label="Bangla Challenge Lab Home">
-            <span class="brand-mark">B<span>âœ¦</span></span>
-            <span class="brand-copy">
-                <strong>Bangla Challenge Lab</strong>
-                <small>PLAY Â· LEARN Â· SHARE</small>
-            </span>
-        </a>
+        <!-- Header -->
+        <header class="site-header">
+            <a class="brand" href="./" aria-label="Bangla Challenge Lab হোম">
+                <span class="brand-icon" aria-hidden="true">✦</span>
+                <span>
+                    <strong>Bangla Challenge Lab</strong>
+                    <small>PLAY · LEARN · SHARE</small>
+                </span>
+            </a>
 
-        <div class="header-status">
-            <span class="status-dot"></span>
-            à¦¬à¦¾à¦‚à¦²à¦¾ à¦•à§à¦‡à¦œ
-        </div>
-    </header>
+            <span class="eyebrow">বাংলা কুইজ</span>
+        </header>
 
-    <main class="page-shell">
-        <section id="start-screen" class="screen hero-section">
-            <div class="hero-copy">
-                <div class="eyebrow">
-                    <span class="eyebrow-icon">âœ¦</span>
-                    YOUR DIGITAL IQ CHALLENGE
-                </div>
+        <main>
+            <!-- Start screen -->
+            <section id="start-screen" class="hero">
+                <div class="hero-content">
+                    <p class="eyebrow">✦ YOUR DIGITAL IQ CHALLENGE</p>
 
-                <h1>
-                    à¦¤à§à¦®à¦¿ à¦•à¦¤à¦Ÿà¦¾
-                    <span class="gradient-text">Tech-Smart?</span>
-                </h1>
+                    <h1>
+                        তুমি কতটা<br>
+                        <span>Tech-Smart?</span>
+                    </h1>
 
-                <p class="hero-description">
-                    à¦ªà§à¦°à¦¯à§à¦•à§à¦¤à¦¿, à¦‡à¦¨à§à¦Ÿà¦¾à¦°à¦¨à§‡à¦Ÿ à¦†à¦° à¦¡à¦¿à¦œà¦¿à¦Ÿà¦¾à¦² à¦¨à¦¿à¦°à¦¾à¦ªà¦¤à§à¦¤à¦¾ à¦¨à¦¿à§Ÿà§‡
-                    à§­à¦Ÿà¦¿ à¦ªà§à¦°à¦¶à§à¦¨à§‡à¦° à¦‰à¦¤à§à¦¤à¦° à¦¦à¦¾à¦“à¥¤ à¦¨à¦¿à¦œà§‡à¦° à¦¸à§à¦•à§‹à¦° à¦œà¦¾à¦¨à§‹,
-                    à¦¨à¦¤à§à¦¨ à¦•à¦¿à¦›à§ à¦¶à§‡à¦–à§‹, à¦†à¦° à¦¬à¦¨à§à¦§à§à¦¦à§‡à¦° à¦šà§à¦¯à¦¾à¦²à§‡à¦žà§à¦œ à¦•à¦°à§‹à¥¤
-                </p>
+                    <p class="hero-description">
+                        প্রযুক্তি, ইন্টারনেট ও ডিজিটাল নিরাপত্তা সম্পর্কে
+                        তোমার জ্ঞান যাচাই করো। ৭টি প্রশ্নের উত্তর দিয়ে
+                        নিজের স্কোর দেখো এবং বন্ধুদের চ্যালেঞ্জ করো।
+                    </p>
 
-                <div class="feature-row">
-                    <div class="feature-item">
-                        <span class="feature-icon">âš¡</span>
-                        <span><strong>à§­à¦Ÿà¦¿ à¦ªà§à¦°à¦¶à§à¦¨</strong><small>à¦¦à§à¦°à§à¦¤ à¦šà§à¦¯à¦¾à¦²à§‡à¦žà§à¦œ</small></span>
+                    <ul class="feature-list">
+                        <li>
+                            <span class="feature-icon" aria-hidden="true">🧠</span>
+                            <span>
+                                <strong>৭টি প্রশ্ন</strong>
+                                মজার প্রশ্নে জ্ঞান যাচাই
+                            </span>
+                        </li>
+
+                        <li>
+                            <span class="feature-icon" aria-hidden="true">⚡</span>
+                            <span>
+                                <strong>দ্রুত ফলাফল</strong>
+                                সঙ্গে সঙ্গেই স্কোর
+                            </span>
+                        </li>
+
+                        <li>
+                            <span class="feature-icon" aria-hidden="true">🏆</span>
+                            <span>
+                                <strong>রেজাল্ট কার্ড</strong>
+                                ডাউনলোড ও শেয়ার
+                            </span>
+                        </li>
+                    </ul>
+
+                    <div class="start-form">
+                        <label for="player-name">তোমার নাম (ঐচ্ছিক)</label>
+
+                        <input
+                            id="player-name"
+                            name="player-name"
+                            type="text"
+                            maxlength="30"
+                            placeholder="তোমার নাম লিখো"
+                            autocomplete="nickname"
+                        >
+
+                        <button id="start-btn" class="primary-btn" type="button">
+                            কুইজ শুরু করো
+                            <span aria-hidden="true">→</span>
+                        </button>
+
+                        <p class="quiz-note">
+                            কোনো অ্যাকাউন্ট লাগবে না · বিনামূল্যে খেলো
+                        </p>
                     </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">â—ˆ</span>
-                        <span><strong>à¦¤à¦¾à§Žà¦•à§à¦·à¦£à¦¿à¦• à¦«à¦²</strong><small>à¦¸à§à¦•à§‹à¦° à¦“ à¦«à¦¿à¦¡à¦¬à§à¦¯à¦¾à¦•</small></span>
+                </div>
+
+                <div class="hero-visual" aria-hidden="true">
+                    <div class="orbit orbit-one"></div>
+                    <div class="orbit orbit-two"></div>
+
+                    <div class="floating-card floating-card-top">
+                        <span>✦ SMART THINKING</span>
                     </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">â†—</span>
-                        <span><strong>à¦¶à§‡à§Ÿà¦¾à¦° à¦•à¦°à§‹</strong><small>à¦¬à¦¨à§à¦§à§à¦¦à§‡à¦° à¦¸à¦™à§à¦—à§‡</small></span>
+
+                    <div class="main-visual-card">
+                        <span class="visual-spark">✦</span>
+                        <div class="brain-emoji">🧠</div>
+                        <p class="visual-score">৭ / ৭</p>
+                        <p class="visual-label">তোমার সম্ভাব্য স্কোর</p>
+
+                        <div class="visual-progress">
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <div class="floating-card floating-card-bottom">
+                        <span>⚡ THINK · ANSWER · GROW</span>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div class="challenge-panel">
-                <div class="panel-topline">
-                    <span class="panel-label">THE CHALLENGE</span>
-                    <span class="live-pill"><span></span> READY TO PLAY</span>
-                </div>
-
-                <div class="orbit-art" aria-hidden="true">
-                    <div class="orbit orbit-outer"></div>
-                    <div class="orbit orbit-inner"></div>
-                    <div class="orbit-core">
-                        <span class="core-spark">âœ¦</span>
-                        <strong>IQ</strong>
-                        <small>YOUR NEXT LEVEL</small>
+            <!-- Quiz screen -->
+            <section id="quiz-screen" class="quiz-section" hidden>
+                <div class="quiz-heading">
+                    <div>
+                        <p class="eyebrow">YOUR CHALLENGE</p>
+                        <h2>চলো, শুরু করা যাক!</h2>
                     </div>
-                    <span class="orbit-chip chip-one">01</span>
-                    <span class="orbit-chip chip-two">01 / 07</span>
-                    <span class="orbit-chip chip-three">âš¡</span>
+
+                    <div class="question-counter">
+                        <span id="question-number">১</span>
+                        <span class="counter-divider">/</span>
+                        <span id="total-questions">৭</span>
+                    </div>
                 </div>
 
-                <div class="panel-heading">
-                    <h2>à¦¤à§‹à¦®à¦¾à¦° à¦šà§à¦¯à¦¾à¦²à§‡à¦žà§à¦œ à¦¶à§à¦°à§ à¦¹à§‹à¦•</h2>
-                    <p>à¦ªà§à¦°à¦¸à§à¦¤à§à¦¤ à¦¤à§‹? à¦¦à§‡à¦–à¦¿ à¦¤à§‹à¦®à¦¾à¦° à¦¡à¦¿à¦œà¦¿à¦Ÿà¦¾à¦² à¦¦à¦•à§à¦·à¦¤à¦¾ à¦•à¦¤à¦Ÿà¦¾!</p>
-                </div>
-
-                <label class="field-label" for="player-name">
-                    à¦¤à§‹à¦®à¦¾à¦° à¦¨à¦¾à¦® <span>(à¦à¦šà§à¦›à¦¿à¦•)</span>
-                </label>
-                <input
-                    id="player-name"
-                    class="name-input"
-                    type="text"
-                    maxlength="30"
-                    placeholder="à¦à¦–à¦¾à¦¨à§‡ à¦¨à¦¾à¦® à¦²à¦¿à¦–à¦¤à§‡ à¦ªà¦¾à¦°à§‹"
-                    autocomplete="given-name"
+                <div
+                    id="progress-track"
+                    class="progress-track"
+                    role="progressbar"
+                    aria-label="কুইজের অগ্রগতি"
+                    aria-valuemin="0"
+                    aria-valuemax="7"
+                    aria-valuenow="0"
                 >
-
-                <button id="start-btn" class="primary-button" type="button">
-                    <span>à¦•à§à¦‡à¦œ à¦¶à§à¦°à§ à¦•à¦°à§‹</span>
-                    <span class="button-arrow">â†’</span>
-                </button>
-
-                <div class="privacy-note">
-                    <span>âœ“</span> à¦«à§à¦°à¦¿ Â· à¦•à§‹à¦¨à§‹ à¦…à§à¦¯à¦¾à¦•à¦¾à¦‰à¦¨à§à¦Ÿ à¦ªà§à¦°à§Ÿà§‹à¦œà¦¨ à¦¨à§‡à¦‡
-                </div>
-            </div>
-        </section>
-
-        <section id="quiz-screen" class="screen quiz-section" hidden>
-            <div class="quiz-topline">
-                <div>
-                    <span class="eyebrow">YOUR CHALLENGE</span>
-                    <h1>à¦šà¦²à§‹, à¦¶à§à¦°à§ à¦•à¦°à¦¾ à¦¯à¦¾à¦•!</h1>
-                </div>
-                <div class="question-counter">
-                    <span id="question-number">1</span>
-                    <span class="counter-divider">/</span>
-                    <span id="total-questions">7</span>
-                </div>
-            </div>
-
-            <div class="progress-track" id="progress-track">
-                <div class="progress-bar" id="progress-bar" style="width:0%"></div>
-            </div>
-
-            <article class="question-card">
-                <div class="question-meta">
-                    <span id="question-category" class="category-pill">DIGITAL SMARTS</span>
-                    <span class="question-meta-note">à¦à¦•à¦Ÿà¦¿ à¦¸à¦ à¦¿à¦• à¦‰à¦¤à§à¦¤à¦° à¦¬à§‡à¦›à§‡ à¦¨à¦¾à¦“</span>
+                    <div id="progress-bar" class="progress-bar"></div>
                 </div>
 
-                <h2 id="question-text">à¦ªà§à¦°à¦¶à§à¦¨ à¦²à§‹à¦¡ à¦¹à¦šà§à¦›à§‡...</h2>
+                <article class="question-card">
+                    <div class="question-meta">
+                        <span id="question-category" class="category-pill">
+                            ডিজিটাল নিরাপত্তা
+                        </span>
 
-                <div id="answer-options" class="answer-options"></div>
+                        <span class="points-label">১ পয়েন্ট</span>
+                    </div>
 
-                <div id="answer-feedback" class="answer-feedback" aria-live="polite"></div>
+                    <h2 id="question-text">প্রশ্ন এখানে দেখানো হবে</h2>
 
-                <div class="quiz-card-footer">
-                    <span class="answered-label">
-                        à¦‰à¦¤à§à¦¤à¦° à¦¦à§‡à¦“à§Ÿà¦¾ à¦¹à§Ÿà§‡à¦›à§‡:
-                        <strong id="answered-count">0</strong>
-                    </span>
-                    <button id="next-btn" class="primary-button next-button" type="button" disabled>
-                        à¦ªà¦°à§‡à¦° à¦ªà§à¦°à¦¶à§à¦¨ <span class="button-arrow">â†’</span>
+                    <div
+                        id="answer-options"
+                        class="answer-options"
+                        aria-label="উত্তরের বিকল্প"
+                    ></div>
+
+                    <div
+                        id="answer-feedback"
+                        class="answer-feedback"
+                        aria-live="polite"
+                    ></div>
+                </article>
+
+                <div class="quiz-footer">
+                    <p class="quiz-note">
+                        উত্তর দেওয়া হয়েছে:
+                        <strong id="answered-count">০</strong>/৭
+                    </p>
+
+                    <button id="next-btn" class="primary-btn" type="button" disabled>
+                        পরের প্রশ্ন
+                        <span aria-hidden="true">→</span>
                     </button>
                 </div>
-            </article>
+            </section>
 
-            <p class="quiz-footnote">à¦­à§‡à¦¬à§‡ à¦‰à¦¤à§à¦¤à¦° à¦¦à¦¾à¦“â€”à¦ªà§à¦°à¦¤à¦¿à¦Ÿà¦¿ à¦ªà§à¦°à¦¶à§à¦¨ à¦¥à§‡à¦•à§‡à¦‡ à¦¨à¦¤à§à¦¨ à¦•à¦¿à¦›à§ à¦¶à§‡à¦–à¦¾à¦° à¦¸à§à¦¯à§‹à¦— à¦†à¦›à§‡à¥¤</p>
-        </section>
-
-        <section id="result-screen" class="screen result-section" hidden>
-            <div class="result-heading">
-                <span class="eyebrow">CHALLENGE COMPLETED</span>
-                <h1>à¦¦à¦¾à¦°à§à¦£! à¦¤à§à¦®à¦¿ à¦šà§à¦¯à¦¾à¦²à§‡à¦žà§à¦œ à¦¶à§‡à¦· à¦•à¦°à§‡à¦›à¥¤</h1>
-                <p>à¦¤à§‹à¦®à¦¾à¦° à¦«à¦²à¦¾à¦«à¦² à¦¦à§‡à¦–à§‡ à¦¨à¦¾à¦“ à¦à¦¬à¦‚ à¦¬à¦¨à§à¦§à§à¦¦à§‡à¦° à¦¸à¦™à§à¦—à§‡ à¦¶à§‡à§Ÿà¦¾à¦° à¦•à¦°à§‹à¥¤</p>
-            </div>
-
-            <article id="result-card" class="result-card">
-                <div class="result-card-top">
-                    <div class="brand result-brand">
-                        <span class="brand-mark">B<span>âœ¦</span></span>
-                        <span class="brand-copy">
-                            <strong>Bangla Challenge Lab</strong>
-                            <small>MY TECH-SMART RESULT</small>
-                        </span>
-                    </div>
-                    <span class="result-stamp">âœ“ COMPLETED</span>
+            <!-- Result screen -->
+            <section id="result-screen" class="result-section" hidden>
+                <div class="result-header">
+                    <span class="result-trophy" aria-hidden="true">🏆</span>
+                    <p class="eyebrow">CHALLENGE COMPLETED</p>
+                    <h2 id="result-title">দারুণ চেষ্টা!</h2>
+                    <p id="result-message">
+                        তোমার ফলাফল তৈরি হয়েছে। বন্ধুদের সঙ্গে শেয়ার করো!
+                    </p>
                 </div>
 
-                <div class="result-card-content">
-                    <p class="result-kicker">YOUR RESULT IS IN</p>
-                    <h2 id="player-result">à¦¤à§‹à¦®à¦¾à¦° à¦«à¦²à¦¾à¦«à¦²</h2>
-                    <div class="score-display">
-                        <span id="final-score">0/7</span>
+                <div id="result-card" class="result-card">
+                    <div class="result-card-brand">
+                        <span aria-hidden="true">✦</span>
+                        <span>Bangla Challenge Lab</span>
                     </div>
-                    <h3 id="result-title">à¦šà§‡à¦·à§à¦Ÿà¦¾ à¦šà¦¾à¦²à¦¿à§Ÿà§‡ à¦¯à¦¾à¦“!</h3>
-                    <p id="result-message">à¦ªà§à¦°à¦¤à¦¿à¦Ÿà¦¿ à¦šà§à¦¯à¦¾à¦²à§‡à¦žà§à¦œà¦‡ à¦¶à§‡à¦–à¦¾à¦° à¦¨à¦¤à§à¦¨ à¦¸à§à¦¯à§‹à¦—à¥¤</p>
+
+                    <div class="result-brain" aria-hidden="true">🧠</div>
+
+                    <p class="result-overline">আমার Tech-Smart স্কোর</p>
+
+                    <h2 id="player-result">Tech Explorer</h2>
+
+                    <div class="score-display">
+                        <span id="final-score">০</span>
+                        <span class="score-total">/ ৭</span>
+                    </div>
 
                     <div class="result-meter">
-                        <div id="result-meter-fill" class="result-meter-fill" style="width:0%"></div>
+                        <div id="result-meter-fill"></div>
                     </div>
-                    <div class="result-card-bottom">
-                        <span>PLAY Â· LEARN Â· SHARE</span>
-                        <span>à¦¬à¦¾à¦‚à¦²à¦¾à§Ÿ à¦¶à¦¿à¦–à¦¿, à¦à¦—à¦¿à§Ÿà§‡ à¦¯à¦¾à¦‡ âœ¦</span>
-                    </div>
+
+                    <p class="result-card-footer">
+                        এবার তোমার পালা! তুমি কত পাবে?
+                    </p>
+
+                    <p class="result-card-footer">
+                        imranbrand.github.io/bangla-challenge-lab
+                    </p>
                 </div>
-            </article>
 
-            <div class="result-actions">
-                <button id="share-btn" class="primary-button" type="button">
-                    <span>à¦«à¦²à¦¾à¦«à¦² à¦¶à§‡à§Ÿà¦¾à¦° à¦•à¦°à§‹</span>
-                    <span class="button-arrow">â†—</span>
-                </button>
-                <button id="download-btn" class="secondary-button" type="button">
-                    <span>â†“</span> à¦°à§‡à¦œà¦¾à¦²à§à¦Ÿ à¦•à¦¾à¦°à§à¦¡ à¦¡à¦¾à¦‰à¦¨à¦²à§‹à¦¡
-                </button>
-                <button id="retry-btn" class="text-button" type="button">
-                    â†» à¦†à¦¬à¦¾à¦° à¦–à§‡à¦²à§‹
-                </button>
-            </div>
+                <div class="result-actions">
+                    <button id="download-btn" class="primary-btn" type="button">
+                        রেজাল্ট কার্ড ডাউনলোড
+                    </button>
 
-            <p class="result-disclaimer">à¦à¦‡ à¦•à§à¦‡à¦œà¦Ÿà¦¿ à¦¶à§‡à¦–à¦¾ à¦“ à¦¬à¦¿à¦¨à§‹à¦¦à¦¨à§‡à¦° à¦œà¦¨à§à¦¯ à¦¤à§ˆà¦°à¦¿à¥¤</p>
-        </section>
-    </main>
+                    <button id="share-btn" class="secondary-btn" type="button">
+                        Facebook-এ শেয়ার করো
+                    </button>
 
-    <footer class="site-footer">
-        <span>Â© <span id="current-year">2026</span> Bangla Challenge Lab</span>
-        <span>à¦¬à¦¾à¦‚à¦²à¦¾à§Ÿ à¦¶à¦¿à¦–à¦¿ Â· à¦¸à§à¦®à¦¾à¦°à§à¦Ÿà¦­à¦¾à¦¬à§‡ à¦à¦—à¦¿à§Ÿà§‡ à¦¯à¦¾à¦‡</span>
-    </footer>
+                    <button id="retry-btn" class="secondary-btn" type="button">
+                        আবার খেলো ↻
+                    </button>
+                </div>
+
+                <p class="share-note">
+                    চাইলে ডাউনলোড করা রেজাল্ট কার্ডটি Facebook বা LinkedIn
+                    পোস্টে ছবির সঙ্গে যুক্ত করতে পারো।
+                </p>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="footer-line"></div>
+
+            <p>
+                <strong>Bangla Challenge Lab</strong>
+                · Play smart. Learn more.
+            </p>
+
+            <p class="footer-small">
+                একটি শিক্ষামূলক কুইজ প্রজেক্ট ·
+                © <span id="current-year">2026</span>
+                Bangla Challenge Lab
+            </p>
+        </footer>
+    </div>
 </body>
 </html>
 
