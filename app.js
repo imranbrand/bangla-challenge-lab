@@ -1,271 +1,432 @@
 
-const questions = [
-  {
-    topic: "DIGITAL SAFETY",
-    q: "কোনটি সবচেয়ে শক্তিশালী পাসওয়ার্ডের উদাহরণ?",
-    options: ["12345678", "password", "T!ger_8River#29", "imran123"],
-    correct: 2
-  },
-  {
-    topic: "ONLINE SAFETY",
-    q: "অচেনা কেউ তোমার OTP চাইলে কী করবে?",
-    options: ["দিয়ে দেব", "কাউকে দেব না", "বন্ধুকে পাঠাব", "পোস্ট করে দেব"],
-    correct: 1
-  },
-  {
-    topic: "SMART SEARCH",
-    q: "অনলাইনে কোনো তথ্য যাচাই করার ভালো উপায় কোনটি?",
-    options: [
-      "শুধু শিরোনাম পড়া",
-      "লাইক গোনা",
-      "একাধিক নির্ভরযোগ্য উৎস দেখা",
-      "প্রথম পোস্ট বিশ্বাস করা"
-    ],
-    correct: 2
-  },
-  {
-    topic: "AI AWARENESS",
-    q: "AI-এর উত্তর ব্যবহার করার আগে কী করা ভালো?",
-    options: [
-      "সব উত্তর সত্য ধরা",
-      "গুরুত্বপূর্ণ তথ্য যাচাই করা",
-      "সঙ্গে সঙ্গে শেয়ার করা",
-      "কিছুই না"
-    ],
-    correct: 1
-  },
-  {
-    topic: "PRIVACY",
-    q: "অন্যের ছবি পোস্ট করার আগে কী করা উচিত?",
-    options: [
-      "অনুমতি নেওয়া",
-      "সব গ্রুপে পাঠানো",
-      "লোকেশন যোগ করা",
-      "যেকোনো ক্যাপশন দেওয়া"
-    ],
-    correct: 0
-  },
-  {
-    topic: "PRODUCTIVITY",
-    q: "গুরুত্বপূর্ণ ফাইল হারানো এড়াতে কোন অভ্যাস ভালো?",
-    options: [
-      "সব ফাইল এলোমেলো রাখা",
-      "ব্যাকআপ রাখা",
-      "ফাইলের নাম না দেওয়া",
-      "শুধু এক কপি রাখা"
-    ],
-    correct: 1
-  },
-  {
-    topic: "CRITICAL THINKING",
-    q: "অবিশ্বাস্য পুরস্কারের লিংক পেলে কী করবে?",
-    options: [
-      "সঙ্গে সঙ্গে ক্লিক",
-      "পাসওয়ার্ড লিখে দেখা",
-      "লিংক ও প্রেরক যাচাই করা",
-      "সবাইকে পাঠানো"
-    ],
-    correct: 2
-  }
-];
 
-const results = [
-  {
-    min: 0, max: 2,
-    title: "Curious Explorer",
-    description: "শেখার যাত্রা শুরু হয়েছে! ডিজিটাল নিরাপত্তার বিষয়গুলো আরেকবার দেখে আবার চেষ্টা করো।"
-  },
-  {
-    min: 3, max: 4,
-    title: "Smart Thinker",
-    description: "ভালো করেছ! আরও কিছু সঠিক উত্তর দিয়ে নিজের স্কোর বাড়ানোর চেষ্টা করো।"
-  },
-  {
-    min: 5, max: 6,
-    title: "Tech-Smart Star",
-    description: "দারুণ স্কোর! এবার বন্ধুদের চ্যালেঞ্জ দিয়ে দেখো তারা তোমাকে হারাতে পারে কি না।"
-  },
-  {
-    min: 7, max: 7,
-    title: "Digital Legend",
-    description: "পারফেক্ট স্কোর! এবার বন্ধুদের মধ্যে তোমার চ্যালেঞ্জ ছড়িয়ে দাও।"
-  }
-];
 
-const $ = id => document.getElementById(id);
-const bn = n => String(n).replace(/\d/g, d => "০১২৩৪৫৬৭৮৯"[Number(d)]);
+"use strict";
 
-let index = 0;
-let score = 0;
-let chosen = null;
-let name = "";
+(() => {
+  const $ = (id) => document.getElementById(id);
 
-function screen(id) {
-  ["start", "game", "result"].forEach(key => {
-    $(key).hidden = key !== id;
-  });
-}
+  const questions = [
+    {
+      topic: "ডিজিটাল নিরাপত্তা",
+      question: "কোনটি সবচেয়ে শক্তিশালী পাসওয়ার্ডের উদাহরণ?",
+      options: [
+        "12345678",
+        "password",
+        "T!ger_8River#29",
+        "imran123"
+      ],
+      answer: 2,
+      explanation: "বড় ও ছোট হাতের অক্ষর, সংখ্যা এবং বিশেষ চিহ্নের মিশ্রণ পাসওয়ার্ডকে শক্তিশালী করতে সাহায্য করে।"
+    },
+    {
+      topic: "অনলাইন নিরাপত্তা",
+      question: "কেউ ফোন করে তোমার OTP চাইলে কী করবে?",
+      options: [
+        "তাকে OTP দিয়ে দেব",
+        "OTP কাউকে দেব না",
+        "Facebook-এ পোস্ট করব",
+        "বন্ধুকে পাঠিয়ে দেব"
+      ],
+      answer: 1,
+      explanation: "OTP গোপন রাখবে। ব্যাংক বা কোনো বিশ্বস্ত সেবার পরিচয় দিলেও কাউকে OTP জানাবে না।"
+    },
+    {
+      topic: "তথ্য যাচাই",
+      question: "অনলাইনে পাওয়া কোনো খবর সত্য কি না যাচাই করবে কীভাবে?",
+      options: [
+        "শুধু শিরোনাম দেখে বিশ্বাস করব",
+        "বন্ধু শেয়ার করেছে বলে বিশ্বাস করব",
+        "একাধিক নির্ভরযোগ্য সূত্রে যাচাই করব",
+        "যাচাই না করেই শেয়ার করব"
+      ],
+      answer: 2,
+      explanation: "একাধিক নির্ভরযোগ্য সংবাদমাধ্যম বা মূল সূত্রের তথ্য মিলিয়ে দেখো।"
+    },
+    {
+      topic: "কৃত্রিম বুদ্ধিমত্তা",
+      question: "AI-এর দেওয়া গুরুত্বপূর্ণ তথ্য ব্যবহার করার আগে কী করা উচিত?",
+      options: [
+        "সব তথ্য শতভাগ সঠিক ধরে নেওয়া",
+        "গুরুত্বপূর্ণ তথ্য নির্ভরযোগ্য সূত্রে যাচাই করা",
+        "যাচাই ছাড়াই জমা দেওয়া",
+        "অন্যের সঙ্গে যাচাই না করে শেয়ার করা"
+      ],
+      answer: 1,
+      explanation: "AI ভুল বা অসম্পূর্ণ উত্তর দিতে পারে। গুরুত্বপূর্ণ তথ্য নির্ভরযোগ্য সূত্রে যাচাই করো।"
+    },
+    {
+      topic: "ডিজিটাল শিষ্টাচার",
+      question: "অন্য কারও ছবি অনলাইনে পোস্ট করার আগে কী করা উচিত?",
+      options: [
+        "তার অনুমতি নেওয়া",
+        "অনুমতি ছাড়াই পোস্ট করা",
+        "ছবিতে ভুল তথ্য যোগ করা",
+        "তার ব্যক্তিগত তথ্যও প্রকাশ করা"
+      ],
+      answer: 0,
+      explanation: "অন্যের ছবি প্রকাশ করার আগে অনুমতি নেওয়া তার গোপনীয়তা ও সম্মানের অংশ।"
+    },
+    {
+      topic: "ডেটা সুরক্ষা",
+      question: "গুরুত্বপূর্ণ ফাইল নিরাপদ রাখতে কোন কাজটি ভালো?",
+      options: [
+        "সব ফাইল এক জায়গায় রেখে কোনো backup না রাখা",
+        "নিয়মিত backup রাখা",
+        "পাসওয়ার্ড সবার সঙ্গে শেয়ার করা",
+        "সব নিরাপত্তা ব্যবস্থা বন্ধ রাখা"
+      ],
+      answer: 1,
+      explanation: "নিয়মিত backup রাখলে ডিভাইস নষ্ট হওয়া বা ফাইল হারিয়ে যাওয়ার পর তথ্য পুনরুদ্ধার করা সহজ হয়।"
+    },
+    {
+      topic: "অনলাইন প্রতারণা",
+      question: "অচেনা একটি লিংকে পুরস্কার জেতার কথা বলা হলে কী করবে?",
+      options: [
+        "সঙ্গে সঙ্গে লিংকে ক্লিক করব",
+        "ব্যক্তিগত তথ্য দিয়ে দেব",
+        "প্রেরক ও লিংক যাচাই করব",
+        "বন্ধুদের সবাইকে পাঠাব"
+      ],
+      answer: 2,
+      explanation: "অচেনা লিংক প্রতারণামূলক হতে পারে। প্রেরক ও ওয়েবসাইট যাচাই না করে ক্লিক করবে না।"
+    }
+  ];
 
-function startQuiz() {
-  index = 0;
-  score = 0;
-  chosen = null;
-  name = $("player").value.trim().slice(0, 24);
-  $("heading").textContent = "প্রশ্নের উত্তর দাও";
-  $("counter").textContent = "৭টি প্রশ্ন";
-  $("progress").style.width = "0%";
-  screen("game");
-  renderQuestion();
-}
+  let currentIndex = 0;
+  let score = 0;
+  let answered = false;
+  let answeredCount = 0;
+  let playerName = "";
+  let selectedAnswers = [];
 
-function renderQuestion() {
-  chosen = null;
-  const item = questions[index];
-
-  $("topic").textContent = item.topic;
-  $("number").textContent = `প্রশ্ন ${bn(index + 1)} / ${bn(questions.length)}`;
-  $("question").textContent = item.q;
-  $("progress").style.width = `${index / questions.length * 100}%`;
-  $("nextBtn").disabled = true;
-  $("nextBtn").textContent =
-    index === questions.length - 1 ? "রেজাল্ট দেখো →" : "পরের প্রশ্ন →";
-
-  const area = $("answers");
-  area.replaceChildren();
-
-  item.options.forEach((option, i) => {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "answer";
-    button.textContent = `${String.fromCharCode(65 + i)}. ${option}`;
-
-    button.addEventListener("click", () => {
-      chosen = i;
-      area.querySelectorAll("button").forEach(b => b.classList.remove("selected"));
-      button.classList.add("selected");
-      $("nextBtn").disabled = false;
+  const bn = (value) =>
+    Number(value).toLocaleString("bn-BD", {
+      maximumFractionDigits: 0
     });
 
-    area.append(button);
-  });
-}
+  function showScreen(screenId) {
+    ["start-screen", "quiz-screen", "result-screen"].forEach((id) => {
+      const element = $(id);
+      if (element) element.hidden = id !== screenId;
+    });
 
-function nextQuestion() {
-  if (chosen === null) return;
-
-  if (chosen === questions[index].correct) score++;
-  index++;
-
-  if (index < questions.length) {
-    renderQuestion();
-  } else {
-    showResult();
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
-}
 
-function showResult() {
-  $("heading").textContent = "তোমার রেজাল্ট তৈরি!";
-  $("progress").style.width = "100%";
-  $("score").textContent = bn(score);
+  function setProgress(value) {
+    const progress = $("progress-bar");
+    const track = $("progress-track");
+    const percent = (value / questions.length) * 100;
 
-  const result = results.find(r => score >= r.min && score <= r.max);
-  $("title").textContent = result.title;
-  $("description").textContent = result.description;
-  $("scoreBar").style.width = `${score / questions.length * 100}%`;
-  $("playerResult").textContent =
-    name ? `${name} — তোমার Tech-Smart Score` : "তোমার Tech-Smart Score";
+    if (progress) progress.style.width = `${percent}%`;
 
-  screen("result");
-}
+    if (track) {
+      track.setAttribute("aria-valuemax", String(questions.length));
+      track.setAttribute("aria-valuenow", String(value));
+    }
+  }
 
-function makeCard() {
-  const canvas = $("canvas");
-  const ctx = canvas.getContext("2d");
+  function updateAnsweredCount() {
+    // HTML-এ "উত্তর দেওয়া হয়েছে:" লেখা আগে থেকেই আছে।
+    // এখানে শুধু সংখ্যা বসবে, ফলে বাক্যটি দুবার দেখা যাবে না।
+    const counter = $("answered-count");
+    if (counter) counter.textContent = bn(answeredCount);
+  }
 
-  const bg = ctx.createLinearGradient(0, 0, 1200, 630);
-  bg.addColorStop(0, "#10152a");
-  bg.addColorStop(0.55, "#28234e");
-  bg.addColorStop(1, "#123b42");
+  function startQuiz() {
+    currentIndex = 0;
+    score = 0;
+    answered = false;
+    answeredCount = 0;
+    selectedAnswers = [];
+    playerName = ($("player-name")?.value || "").trim().slice(0, 30);
 
-  ctx.fillStyle = bg;
-  ctx.fillRect(0, 0, 1200, 630);
+    updateAnsweredCount();
+    setProgress(0);
+    showScreen("quiz-screen");
+    renderQuestion();
+  }
 
-  ctx.globalAlpha = 0.18;
-  ctx.fillStyle = "#b5a0ff";
-  ctx.beginPath();
-  ctx.arc(1030, 80, 210, 0, Math.PI * 2);
-  ctx.fill();
+  function renderQuestion() {
+    const item = questions[currentIndex];
+    if (!item) return;
 
-  ctx.fillStyle = "#70e7d9";
-  ctx.beginPath();
-  ctx.arc(100, 620, 190, 0, Math.PI * 2);
-  ctx.fill();
-  ctx.globalAlpha = 1;
+    answered = false;
 
-  ctx.fillStyle = "#70e7d9";
-  ctx.font = "bold 26px Arial";
-  ctx.fillText("BANGLA CHALLENGE LAB", 70, 80);
+    $("question-number").textContent = bn(currentIndex + 1);
+    $("total-questions").textContent = bn(questions.length);
+    $("question-category").textContent = item.topic;
+    $("question-text").textContent = item.question;
+    $("answer-feedback").textContent = "";
 
-  ctx.fillStyle = "#ffffff";
-  ctx.font = "bold 48px Arial";
-  ctx.fillText(name ? `${name}'s Tech-Smart Score` : "My Tech-Smart Score", 70, 170);
+    const area = $("answer-options");
+    area.replaceChildren();
 
-  ctx.fillStyle = "#b5a0ff";
-  ctx.font = "bold 145px Arial";
-  ctx.fillText(String(score), 70, 355);
+    item.options.forEach((option, optionIndex) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "answer";
+      button.textContent = `${String.fromCharCode(65 + optionIndex)}. ${option}`;
+      button.setAttribute("aria-pressed", "false");
 
-  ctx.fillStyle = "#c3cbe4";
-  ctx.font = "bold 42px Arial";
-  ctx.fillText("/ 7", 230, 350);
+      button.addEventListener("click", () => {
+        chooseAnswer(optionIndex, button);
+      });
 
-  const result = results.find(r => score >= r.min && score <= r.max);
-  ctx.fillStyle = "#70e7d9";
-  ctx.font = "bold 38px Arial";
-  ctx.fillText(result.title, 70, 435);
+      area.appendChild(button);
+    });
 
-  ctx.fillStyle = "#ffffff";
-  ctx.font = "27px Arial";
-  ctx.fillText("Can you beat my score?", 70, 505);
+    $("next-btn").disabled = true;
+    $("next-btn").textContent =
+      currentIndex === questions.length - 1
+        ? "ফলাফল দেখো →"
+        : "পরের প্রশ্ন →";
 
-  ctx.fillStyle = "#c3cbe4";
-  ctx.font = "20px Arial";
-  ctx.fillText("Play the quiz and challenge your friends!", 70, 565);
+    setProgress(answeredCount);
+  }
 
-  return canvas;
-}
+  function chooseAnswer(optionIndex, chosenButton) {
+    if (answered) return;
+    answered = true;
 
-function downloadCard() {
-  makeCard().toBlob(blob => {
-    if (!blob) {
-      alert("কার্ড তৈরি করা যায়নি। আবার চেষ্টা করো।");
+    const item = questions[currentIndex];
+    const buttons = $("answer-options").querySelectorAll("button");
+    const correct = optionIndex === item.answer;
+
+    selectedAnswers[currentIndex] = optionIndex;
+    answeredCount += 1;
+
+    if (correct) score += 1;
+
+    buttons.forEach((button, index) => {
+      button.disabled = true;
+      button.setAttribute("aria-pressed", String(index === optionIndex));
+
+      if (index === item.answer) {
+        button.classList.add("correct");
+      } else if (index === optionIndex && !correct) {
+        button.classList.add("incorrect");
+      }
+    });
+
+    chosenButton.classList.add("selected");
+
+    $("answer-feedback").textContent = correct
+      ? `সঠিক উত্তর! ${item.explanation}`
+      : `সঠিক উত্তর: ${item.options[item.answer]}। ${item.explanation}`;
+
+    updateAnsweredCount();
+    setProgress(answeredCount);
+    $("next-btn").disabled = false;
+  }
+
+  function showResult() {
+    showScreen("result-screen");
+
+    $("final-score").textContent = bn(score);
+    $("result-title").textContent = getResultTitle(score);
+    $("result-message").textContent = getResultMessage(score);
+    $("player-result").textContent = playerName
+      ? `${playerName}-এর Tech-Smart স্কোর`
+      : "তোমার Tech-Smart স্কোর";
+
+    const meter = $("result-meter-fill");
+    if (meter) meter.style.width = `${(score / questions.length) * 100}%`;
+
+    const year = $("current-year");
+    if (year) year.textContent = String(new Date().getFullYear());
+  }
+
+  function getResultTitle(value) {
+    if (value <= 2) return "Curious Explorer";
+    if (value <= 4) return "Smart Thinker";
+    if (value <= 6) return "Tech-Smart Star";
+    return "Digital Legend";
+  }
+
+  function getResultMessage(value) {
+    if (value <= 2) {
+      return "শেখার দারুণ সুযোগ আছে! ডিজিটাল নিরাপত্তা ও তথ্য যাচাইয়ের অভ্যাস গড়ে তোলো।";
+    }
+
+    if (value <= 4) {
+      return "ভালো শুরু! নিয়মিত শিখতে থাকো এবং অনলাইনে সচেতন সিদ্ধান্ত নেওয়ার চর্চা করো।";
+    }
+
+    if (value <= 6) {
+      return "চমৎকার! তোমার ডিজিটাল সচেতনতা বেশ ভালো। আরও এক ধাপ এগিয়ে যাও!";
+    }
+
+    return "অসাধারণ! তুমি এই চ্যালেঞ্জে সর্বোচ্চ স্কোর করেছ। তোমার বন্ধুদেরও চ্যালেঞ্জ করো!";
+  }
+
+  function createResultCard() {
+    const canvas = document.createElement("canvas");
+    canvas.width = 1080;
+    canvas.height = 1350;
+
+    const context = canvas.getContext("2d");
+
+    const gradient = context.createLinearGradient(0, 0, 1080, 1350);
+    gradient.addColorStop(0, "#10182b");
+    gradient.addColorStop(0.55, "#172541");
+    gradient.addColorStop(1, "#0b1020");
+
+    context.fillStyle = gradient;
+    context.fillRect(0, 0, canvas.width, canvas.height);
+
+    context.strokeStyle = "rgba(99,230,255,0.45)";
+    context.lineWidth = 4;
+    context.strokeRect(35, 35, 1010, 1280);
+
+    context.textAlign = "center";
+    context.fillStyle = "#63e6ff";
+    context.font = "bold 36px sans-serif";
+    context.fillText("BANGLA CHALLENGE LAB", 540, 135);
+
+    context.fillStyle = "#f4f7ff";
+    context.font = "bold 54px sans-serif";
+    context.fillText("আমার Tech-Smart স্কোর", 540, 300);
+
+    context.font = "bold 170px sans-serif";
+    context.fillStyle = "#63e6ff";
+    context.fillText(`${score}`, 465, 570);
+
+    context.font = "bold 70px sans-serif";
+    context.fillStyle = "#a6b2ca";
+    context.fillText(`/ ${questions.length}`, 655, 570);
+
+    context.font = "bold 46px sans-serif";
+    context.fillStyle = "#f4f7ff";
+    context.fillText(getResultTitle(score), 540, 700);
+
+    context.font = "38px sans-serif";
+    context.fillStyle = "#dce6f8";
+    const name = playerName || "একজন Tech-Smart Learner";
+    context.fillText(name, 540, 790, 900);
+
+    context.fillStyle = "#263650";
+    context.fillRect(160, 870, 760, 24);
+
+    const meterGradient = context.createLinearGradient(160, 0, 920, 0);
+    meterGradient.addColorStop(0, "#63e6ff");
+    meterGradient.addColorStop(1, "#9b8cff");
+
+    context.fillStyle = meterGradient;
+    context.fillRect(160, 870, 760 * score / questions.length, 24);
+
+    context.font = "32px sans-serif";
+    context.fillStyle = "#a6b2ca";
+    context.fillText("৭টি প্রশ্ন · একটি চ্যালেঞ্জ", 540, 1010);
+    context.fillText("বন্ধুদেরও চ্যালেঞ্জ করো!", 540, 1080);
+
+    context.font = "26px sans-serif";
+    context.fillStyle = "#63e6ff";
+    context.fillText("imranbrand.github.io/bangla-challenge-lab", 540, 1205);
+
+    return canvas;
+  }
+
+  function downloadCard() {
+    const canvas = createResultCard();
+
+    canvas.toBlob((blob) => {
+      if (!blob) {
+        alert("কার্ড তৈরি করা যায়নি। আবার চেষ্টা করো।");
+        return;
+      }
+
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "bangla-challenge-result.png";
+
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }, "image/png");
+  }
+
+  function shareFacebook() {
+    const shareUrl = "https://imranbrand.github.io/bangla-challenge-lab/";
+    const facebookUrl =
+      "https://www.facebook.com/sharer/sharer.php?u=" +
+      encodeURIComponent(shareUrl);
+
+    window.open(
+      facebookUrl,
+      "_blank",
+      "noopener,noreferrer,width=700,height=600"
+    );
+  }
+
+  function retryQuiz() {
+    startQuiz();
+  }
+
+  function init() {
+    const requiredIds = [
+      "start-screen",
+      "quiz-screen",
+      "result-screen",
+      "start-btn",
+      "question-number",
+      "total-questions",
+      "progress-bar",
+      "question-category",
+      "question-text",
+      "answer-options",
+      "answer-feedback",
+      "answered-count",
+      "next-btn",
+      "final-score",
+      "result-title",
+      "result-message",
+      "result-meter-fill",
+      "player-result",
+      "download-btn",
+      "share-btn",
+      "retry-btn"
+    ];
+
+    const missing = requiredIds.filter((id) => !$(id));
+
+    if (missing.length) {
+      console.error("HTML-এ প্রয়োজনীয় ID পাওয়া যায়নি:", missing);
       return;
     }
 
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = "bangla-challenge-result.png";
-    link.click();
-    URL.revokeObjectURL(url);
-  }, "image/png");
-}
+    $("start-btn").addEventListener("click", startQuiz);
 
-function shareFacebook() {
-  const url = encodeURIComponent(window.location.href);
-  const facebookUrl =
-    `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+    $("next-btn").addEventListener("click", () => {
+      if (!answered) return;
 
-  window.open(facebookUrl, "_blank", "noopener,noreferrer");
-}
+      if (currentIndex < questions.length - 1) {
+        currentIndex += 1;
+        renderQuestion();
+      } else {
+        showResult();
+      }
+    });
 
-function retry() {
-  $("heading").textContent = "চ্যালেঞ্জ নিতে প্রস্তুত?";
-  $("progress").style.width = "0%";
-  screen("start");
-}
+    $("download-btn").addEventListener("click", downloadCard);
+    $("share-btn").addEventListener("click", shareFacebook);
+    $("retry-btn").addEventListener("click", retryQuiz);
 
-$("startBtn").addEventListener("click", startQuiz);
-$("nextBtn").addEventListener("click", nextQuestion);
-$("downloadBtn").addEventListener("click", downloadCard);
-$("shareBtn").addEventListener("click", shareFacebook);
-$("retryBtn").addEventListener("click", retry);
+    updateAnsweredCount();
+
+    const year = $("current-year");
+    if (year) year.textContent = String(new Date().getFullYear());
+
+    showScreen("start-screen");
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
